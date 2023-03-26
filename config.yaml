@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myconfigmap
+  labels:
+    app: myapplication
+data:
+  envfile: |
+     PORT=8000
+     JWTSECRET=$2a$12$4TU
+     DB_URL=mongodb://mongo-svc:27017/social_media
+
+

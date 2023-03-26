@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: express-node-app-ingress
+spec:
+  ingressClassName: express-node-app-classname
+  rules:
+  - host: node-app-ingress-lb-1142572680.us-east-1.elb.amazonaws.com
+    http:
+      paths:
+      - backend:
+          service:
+            name: node-app-svc
+            port:
+              number: 8000
+        path: /
+        pathType: Prefix
+
+

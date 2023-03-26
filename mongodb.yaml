@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-pod
+  labels:
+    name: mongo-pod
+    
+spec:
+  selector:
+    matchLabels:
+      name: mongo-pod
+
+  replicas: 1
+  template:
+    metadata:
+      name: mongo-pod
+      labels:
+        name: mongo-pod
+    spec:
+      containers:
+      - name: mongo-container
+        image: mongo
+        ports:
+          - containerPort: 27017
+
+        volumeMounts:
+        - mountPath: "/data/db/"
+          name: mongo-vol
+
+      volumes:
+      - name: mongo-vol
+        persistentVolumeClaim:
+              claimName: mongo-pvc
+
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-svc
+spec:
+  selector:
+    name: mongo-pod
+  type: ClusterIP
+  ports:
+  - name: myport
+    protocol: TCP
+    port: 27017
+    targetPort: 27017
+
