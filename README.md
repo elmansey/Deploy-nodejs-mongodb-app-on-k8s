@@ -4,9 +4,11 @@ Deploying nodejs express backend application with MongoDB database on a kubernet
 # Prerequisite
 kubernetes cluster runnig 
 - In my case I used kubeadm to install kubernetes cluster in three ubuntu aws EC2
-![App Screenshot](https://raw.githubusercontent.com/elmansey/Deploy-express-mongodb-app-on-k8s/main/Screenshot%20from%202023-03-26%2021-50-57.png)
+![image](https://user-images.githubusercontent.com/89076648/227803685-738c3815-5ec9-45c5-b614-577d796e4f85.png)
 
-![App Screenshot](https://raw.githubusercontent.com/elmansey/Deploy-express-mongodb-app-on-k8s/main/Screenshot%20from%202023-03-26%2015-54-58.png)
+
+![image](https://user-images.githubusercontent.com/89076648/227803662-e5ac0f7c-2631-4f2c-becf-1668dfa15508.png)
+
 
 [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
 
